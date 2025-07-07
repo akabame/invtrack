@@ -18,16 +18,23 @@ class QuotaConsolidator():
         # Loop through files in the directory
         for filename in tqdm(os.listdir(RAW_DATA_PATH),'reading historic quota files'):
             if filename.endswith('.xlsx'):
-                filepath = os.path.join(RAW_DATA_PATH, filename)
-                df = pd.read_excel(filepath)
-                key = os.path.splitext(filename)[0]  # filename without extension
-                self.quota_dfs[key] = df
+                try:
+                    filepath = os.path.join(RAW_DATA_PATH, filename)
+                    df = pd.read_excel(filepath)
+                    key = os.path.splitext(filename)[0]  # filename without extension
+                    self.quota_dfs[key] = df
+                except Exception as e:
+                    print(f"Error while reading {filename}: {e}")
     
     def group_files_by_fund_name(self):
         self.quota_consolidated = {}
         
         for quota_key in tqdm(self.quota_dfs,'consolidating quota history'):
-            fund_name = quota_key.split('_')[0]
+            try:
+                fund_name = quota_key.split('_')[0]
+            except Exception as e:
+                print(f'name format is wrong: {e}')
+                continue
             
             if fund_name not in self.quota_consolidated:
                 self.quota_consolidated[fund_name] = pd.DataFrame()
