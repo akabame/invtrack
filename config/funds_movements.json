@@ -1,0 +1,13 @@
+{
+  "ALPINE FIM_consolidated_quota": {
+    "data_aporte": "2025-01-02",
+    "valor_inicial": 100000,
+    "aportes": [
+      ["2025-02-15", 20000],
+      ["2025-04-01", 15000]
+    ],
+    "resgates": [
+      ["2025-03-10", 10000]
+    ]
+  },
+}

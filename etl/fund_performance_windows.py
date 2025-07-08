@@ -1,8 +1,6 @@
 import os
 import pandas as pd
 from pathlib import Path
-from datetime import timedelta
-
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 PROCESSED_DATA_PATH = ROOT_DIR / "data" / "processed"
@@ -34,7 +32,7 @@ class FundRentabilityCalculator():
         self.dfs_movement_history = {}
         
         #example
-        self.dfs_movement_history['ALPINE FIM_consolidated_quota'] = {'data_aporte':'2025-01-01','valor_inicial':100000,'aportes':[],'resgates':[]}
+        self.dfs_movement_history['ALPINE FIM_consolidated_quota'] = {'data_aporte':'2025-01-02','valor_inicial':100000,'aportes':[],'resgates':[]}
         
         for fund_name in self.dfs_movement_history:
             df = self.quota_dfs[fund_name]
