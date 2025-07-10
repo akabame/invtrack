@@ -50,7 +50,6 @@ class QuotaConsolidator():
         self.read_quota_history()
         self.group_files_by_fund_name()
         self.export_consolidated_quota()
-        self.export_consolidated_quota()
 
 if __name__ == '__main__':
     temp = QuotaConsolidator()
