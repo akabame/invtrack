@@ -1,0 +1,12 @@
+{
+  "ALPINE FIM_consolidated_quota": {
+    "initial_date": "2022-01-03",
+    "initial_value": 100000,
+    "subscriptions": {
+      "2023-01-03": 10000
+    },
+    "redemptions": {
+      "2023-07-15": 5000
+    }
+  }
+}
